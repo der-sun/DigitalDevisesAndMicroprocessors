@@ -5,6 +5,7 @@
 ![изображение](https://user-images.githubusercontent.com/86686038/234237417-b7a5b4ac-0cc0-452a-9261-a89647627769.png)
 
 Исходная схема:
+
 ![изображение](https://user-images.githubusercontent.com/86686038/234237546-1407db4d-c819-446d-b3d7-5f8f1e6ba79c.png)
 
 Код добавлен ниже:
