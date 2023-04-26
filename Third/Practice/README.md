@@ -10,7 +10,6 @@
 
 Код добавлен ниже:
 <pre>
-
 #include <8051.h>
 void main()
 {
@@ -34,6 +33,7 @@ void main()
 	P2 = 0x1;
 	P2 = 0x0;
 	i = 15;
+	</pre>
 	while(1)
 	{
 		while (cnt<i)
