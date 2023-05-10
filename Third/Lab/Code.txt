@@ -1,1 +1,49 @@
-
+mov         dword ptr [width],5  
+mov         dword ptr [height],5  
+mov         dword ptr [x],1  
+mov         dword ptr [rbp+4Ch],2  
+mov         dword ptr [rbp+50h],3  
+mov         dword ptr [rbp+54h],4  
+mov         dword ptr [rbp+58h],5  
+mov         dword ptr [y],5  
+mov         dword ptr [rbp+7Ch],4  
+mov         dword ptr [rbp+80h],3  
+mov         dword ptr [rbp+84h],2  
+mov         dword ptr [rbp+88h],1  
+lea         rax,[ans]  
+mov         rdi,rax  
+xor         eax,eax  
+mov         ecx,14h  
+rep stos    byte ptr [rdi]  
+mov         dword ptr [rbp+0D4h],0  
+mov         eax,dword ptr [rbp+0D4h]  
+inc         eax  
+mov         dword ptr [rbp+0D4h],eax  
+cmp         dword ptr [rbp+0D4h],5  
+movsxd      rax,dword ptr [rbp+0D4h]  
+mov         edx,2  
+mov         ecx,dword ptr x[rax*4]  
+movsd       mmword ptr [rbp+1A8h],xmm0  
+mov         edx,2  
+mov         ecx,dword ptr [width]  
+movsd       xmm1,mmword ptr [rbp+1A8h]  
+divsd       xmm1,xmm0  
+movaps      xmm0,xmm1  
+movsd       mmword ptr [rbp+1B0h],xmm0  
+movsxd      rax,dword ptr [rbp+0D4h]  
+mov         edx,2  
+mov         ecx,dword ptr y[rax*4]  
+movsd       mmword ptr [rbp+1B8h],xmm0  
+mov         edx,2  
+mov         ecx,dword ptr [height]  
+movsd       xmm1,mmword ptr [rbp+1B8h]  
+divsd       xmm1,xmm0  
+movaps      xmm0,xmm1  
+movsd       xmm1,mmword ptr [rbp+1B0h]  
+addsd       xmm1,xmm0  
+movaps      xmm0,xmm1  
+comisd      xmm1,xmm0  
+movsxd      rax,dword ptr [rbp+0D4h]  
+mov         dword ptr ans[rax*4],1  
+movsxd      rax,dword ptr [rbp+0D4h]  
+mov         dword ptr ans[rax*4],0  
